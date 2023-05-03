@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		ul li {
+			margin-right: 20px;
+
+		}
+
+		ul li a {
+			transition: all 0.2s ease-in-out;
+			padding: 10px;
+			border-radius: 5px;
+			background-color: #3c4c62;
+
+		}
+
+		ul li a:hover {
+			background-color: #fff;
+			color: #000;
+		}
+		img {
+			width: 100px;
+			height: 100px;
+		}
+		body {
+			background-color: #f6f8fa;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			color: #333;
+			padding: 0;
+			margin: 0;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			padding: 20px;
+			box-sizing: border-box;
+
+		}
+		.card {
+			background-color: #fff;
+			box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+			border-radius: 5px;
+			padding: 40px;
+			max-width: 400px;
+			width: 100vw;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+		h1 {
+			margin: 0 0 20px 0;
+			text-align: center;
+			color: #3c4c62;
+			font-weight: bold;
+			font-size: 36px;
+			text-shadow: 1px 1px #e9eff4;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+		label {
+			color: #3c4c62;
+			font-weight: bold;
+			margin-bottom: 10px;
+			text-shadow: 1px 1px #e9eff4;
+		}
+		input[type="text"], input[type="password"] {
+			width: 100%;
+			padding: 12px;
+			border: none;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			background-color: #f6f8fa;
+			border: 2px solid #e9eff4;
+			font-size: 16px;
+			color: #333;
+			transition: border-color 0.2s ease-in-out;
+		}
+		input[type="text"]:focus, input[type="password"]:focus {
+			outline: none;
+			border-color: #3c4c62;
+		}
+		input[type="submit"] {
+			background-color: #3c4c62;
+			color: #fff;
+			padding: 12px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background-color 0.2s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #2a3545;
+		}
+		.error {
+			color: #ff0000;
+			font-size: 14px;
+			margin-top: -10px;
+			margin-bottom: 20px;
+			text-align: center;
+			text-shadow: 1px 1px #e9eff4;
+		}
+		p {
+			text-align: center;
+			font-size: 16px;
+			color: #3c4c62;
+			text-shadow: 1px 1px #e9eff4;
+			margin-top: 20px;
+		}
+		a {
+			color: #3c4c62;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #3c4c62;
+			text-decoration: underline;
+		}
+		@media screen and (max-width: 600px) {
+		.card {
+			padding: 20px;
+		}
+		input[type="text"], input[type="password"], input[type="submit"] {
+			font-size: 14px;
+		}
+		h1 {
+			font-size: 24px;
+		}
+		.error {
+			font-size: 12px;
+		}
+		#foto {
+ 			width: 100px;
+  			height: 100px;
+		}
+		.fotot{
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+
+		}
+	}
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<h1>Sign Up</h1>
+			<form>
+				<label for="username">E-Mail</label>
+				<input type="text" id="username" name="username" placeholder="Enter your e-mail">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" placeholder="Enter your password">
+				<label for="password">Confirm Password</label>
+				<input type="password" id="password" name="password" placeholder="Confirm your password">
+				<input type="submit" value="Sign Up">			 
+			</form>
+			<div class="fotot">
+					<ul>
+						<li><img src="gmail.png"></li>
+						<li><img src="outlook.png"></li>
+						<li><img src="icloud.png"></li>
+					</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+

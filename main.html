@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script>
+	$(document).ready(function(){
+ 	 $('.slider').slick({
+    	autoplay: true,
+    	autoplaySpeed: 1500,
+    	arrows: false,
+    	dots: true
+  	});
+	});
+</script>
+
+	<title>Hotel Program Database</title>
+	<style>
+		body {
+			font-family: 'Segoe UI', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f5f5f5;
+		}
+
+		header {
+			background-color: #1c2331;
+			color: #fff;
+			padding: 20px;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 36px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			text-align: center;
+		}
+
+		nav ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		nav ul li {
+			margin-right: 20px;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: uppercase;
+			transition: all 0.2s ease-in-out;
+			padding: 10px;
+			border-radius: 5px;
+			background-color: #3c4c62;
+		}
+
+		nav ul li a:hover {
+			background-color: #fff;
+			color: #000;
+		}
+
+		main {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 40px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		h2 {
+			font-size: 28px;
+			font-weight: 600;
+			margin-bottom: 20px;
+			color: #3c4c62;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		p {
+			font-size: 16px;
+			margin-bottom: 20px;
+			line-height: 1.5;
+			color: #666;
+			text-align: center;
+		}
+
+		ul li a {
+			color: #3c4c62;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: 600;
+			text-transform: uppercase;
+			transition: all 0.2s ease-in-out;
+			padding: 10px;
+			border-radius: 5px;
+			background-color: #fff;
+			display: block;
+			margin-bottom: 10px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			width: 200px;
+			text-align: center;
+		}
+
+		ul li a:hover {
+			background-color: #3c4c62;
+			color: #fff;
+		}
+		footer {
+			background-color: #1c2331;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin-top: 40px;
+		}
+
+		footer p {
+			margin: 0;
+			font-size: 14px;
+			line-height: 1.5;
+			color: #fff;
+		}
+		div {
+  			width: 900px;
+  			height: 500px;
+		}
+
+		img {
+ 				width: 100%;
+  			height: 100%;
+  			object-fit: all;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Hotel Program Database</h1>
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Rooms</a></li>
+			<li><a href="#">Bookings</a></li>
+			<li><a href="aboutus.html">About Us</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="login.html">Login</a></li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<h2>Welcome to Our Hotel Database!</h2>
+	<section class="slider">
+  <div class="slider">
+    <div><img class="img" src="room1.jpg"></div>
+    <div><img class="img" src="room2.jpg"></div>
+    <div><img class="img" src="room3.jpg"></div>
+  </div>
+	</section>
+	<p>Explore our database and manage your hotel efficiently with our user-friendly software.</p>
+	<ul>
+		<li><a href="#">View Rooms</a></li>
+		<li><a href="#">Add a Room</a></li>
+		<li><a href="#">Edit a Room</a></li>
+		<li><a href="#">Delete a Room</a></li>
+		<li><a href="#">View Bookings</a></li>
+		<li><a href="#">Add a Booking</a></li>
+		<li><a href="#">Edit a Booking</a></li>
+		<li><a href="#">Delete a Booking</a></li>
+		<li><a href="#">View Guests</a></li>
+		<li><a href="#">Add a Guest</a></li>
+		<li><a href="#">Edit a Guest</a></li>
+		<li><a href="#">Delete a Guest</a></li>
+		<li><a href="#">View Reports</a></li>
+	</ul>
+</main>
+<footer>
+	<p>&copy; 2023 Hotel Program Database. All rights reserved.</p>
+</footer>
+</body>
+</html
