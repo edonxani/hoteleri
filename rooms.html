@@ -1,228 +1,305 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Room Gallery</title>
-</script>
+    </script>
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        color: #333;
-      }
-      
-      header {
-        background-color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-      
-      h1 {
-        font-size: 2em;
-        margin-bottom: 10px;
-      }
-      
-      main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      h2 {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-      }
-      
-      .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .gallery img {
-        width: 300px;
-        height: 200px;
-        object-fit: cover;
-        margin: 10px;
-        border: 2px solid #fff;
-        border-radius: 2px;
-        transition: all 0.3s ease-in-out;
-      }
-      
-      .gallery img:hover {
-        transform: scale(1.02);
-        border-color: #ccc;
-      }
-      footer {
-        background-color: #1c2331;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        margin-top: 10px;
-      }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-      footer p {
-        margin: 0;
-        font-size: 11px;
-        line-height: 1.2;
-        color: #fff;
-      }
-      
-      @media only screen and (max-width: 768px) {
-        .gallery img {
-          width: 100%;
-          height: auto;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
         }
-      }
-      .gallery {
-        overflow: hidden;
-      }
-      .slider {
-        display: flex;
-        width: 900px;
-        margin-left: 100px;
-        margin-right: 100px;
-        animation: slide 20s linear infinite;
-      }
-      .slider img {
-        min-width: 20vw;
-      }
-      @keyframes slide {
-        from {
-          transform: translateX(0);
+
+        header {
+            background-color: #1c2331;
+            color: #fff;
+            padding: 2% 5%;
         }
-        to {
-          transform: translateX(-100%);
+
+        h1 {
+            margin: 0;
+            font-size: 3vw;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2vw;
+            text-align: center;
         }
-      }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            nav ul li {
+                margin-right: 3%;
+            }
+
+                nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1.3vw;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    transition: all 0.2s ease-in-out;
+                    padding: 1.2% 2%;
+                    border-radius: 5px;
+                    width: 120%;
+                    background-color: #3c4c62;
+                }
+
+                    nav ul li a:hover {
+                        background-color: #fff;
+                        color: #000;
+                    }
+
+
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            .gallery img {
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+                margin: 10px;
+                border: 2px solid #fff;
+                border-radius: 2px;
+                transition: all 0.3s ease-in-out;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.02);
+                    border-color: #ccc;
+                }
+
+        footer {
+            background-color: #1c2331;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+            footer p {
+                margin: 0;
+                font-size: 11px;
+                line-height: 1.2;
+                color: #fff;
+            }
+
+        @media only screen and (max-width: 768px) {
+            .gallery img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .gallery {
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            width: 900px;
+            margin-left: 100px;
+            margin-right: 100px;
+            animation: slide 20s linear infinite;
+        }
+
+            .slider img {
+                min-width: 20vw;
+            }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        ul li a {
+            color: #3c4c62;
+            text-decoration: none;
+            font-size: 1.5vw;
+            font-weight: 200;
+            text-transform: uppercase;
+            transition: all 0.2s ease-in-out;
+            padding: 1.2% 2%;
+            border-radius: 5px;
+            background-color: #fff;
+            display: block;
+            margin-bottom: 2%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            text-align: center;
+        }
+
+            ul li a:hover {
+                background-color: #3c4c62;
+                color: #fff;
+            }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>Room Gallery</h1>
+        <h1>Hotel Program Database</h1>
+        <nav>
+            <ul class="nalt">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="booking.html">Bookings</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div>
     </header>
-    
-    <main>
-      <section class="gallery">
-        <h2>Rooms for 2 Persons</h2>
-        <div class="gallery">
-            <div class="slider">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
-              <img src="room3.jpg" alt="room 3">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
-            </div>
-          </div>
-      </section>
-      
-      <section class="gallery">
-        <h2>Rooms for 3+ Persons</h2>
-        <div class="gallery">
-            <div class="slider">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
-              <img src="room3.jpg" alt="room 3">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
-            </div>
-          </div>
-      </section>
-      
-      <center><h2>Suites</h2></center>
-      <section class="gallery">
-        <div class="gallery">
-            <div class="slider">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
-              <img src="room3.jpg" alt="room 3">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
-            </div>
-          </div>
-      </section>
 
-      <center><h2>More Rooms</h2></center>
-      <section class="gallery">
-        <div class="gallery">
-            <div class="slider">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
-              <img src="room3.jpg" alt="room 3">
-              <img src="room1.jpg" alt="room 1">
-              <img src="room2.jpg" alt="room 2">
+    <main>
+        <section class="gallery">
+            <h2>Rooms for 2 Persons</h2>
+            <div class="gallery">
+                <div class="slider">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                    <img src="room3.jpg" alt="room 3">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                </div>
             </div>
-          </div>
-      </section>
+        </section>
+
+        <section class="gallery">
+            <h2>Rooms for 3+ Persons</h2>
+            <div class="gallery">
+                <div class="slider">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                    <img src="room3.jpg" alt="room 3">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                </div>
+            </div>
+        </section>
+
+        <center><h2>Suites</h2></center>
+        <section class="gallery">
+            <div class="gallery">
+                <div class="slider">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                    <img src="room3.jpg" alt="room 3">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                </div>
+            </div>
+        </section>
+
+        <center><h2>More Rooms</h2></center>
+        <section class="gallery">
+            <div class="gallery">
+                <div class="slider">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                    <img src="room3.jpg" alt="room 3">
+                    <img src="room1.jpg" alt="room 1">
+                    <img src="room2.jpg" alt="room 2">
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-      <p>&copy; 2023 Hotel Program Database. All rights reserved.</p>
+        <p>&copy; 2023 Hotel Program Database. All rights reserved.</p>
     </footer>
     <script>
-      const gallery = document.querySelectorAll('.gallery');
+        const gallery = document.querySelectorAll('.gallery');
 
-      gallery.forEach(gallery => {
-        const rooms = gallery.querySelectorAll('img');
-        let currentIdx = 0;
-        let interval;
+        gallery.forEach(gallery => {
+            const rooms = gallery.querySelectorAll('img');
+            let currentIdx = 0;
+            let interval;
 
-        const startInterval = () => {
-          interval = setInterval(() => {
-            rooms[currentIdx].classList.remove('active');
-            currentIdx++;
-            if (currentIdx >= rooms.length) {
-              currentIdx = 0;
+            const startInterval = () => {
+                interval = setInterval(() => {
+                    rooms[currentIdx].classList.remove('active');
+                    currentIdx++;
+                    if (currentIdx >= rooms.length) {
+                        currentIdx = 0;
+                    }
+                    rooms[currentIdx].classList.add('active');
+                }, 1200);
             }
+
             rooms[currentIdx].classList.add('active');
-          }, 1200);
-        }
+            startInterval();
 
-        rooms[currentIdx].classList.add('active');
-        startInterval();
+            gallery.addEventListener('mouseover', () => {
+                clearInterval(interval);
+            });
 
-        gallery.addEventListener('mouseover', () => {
-          clearInterval(interval);
+            gallery.addEventListener('mouseout', () => {
+                startInterval();
+            });
         });
 
-        gallery.addEventListener('mouseout', () => {
-          startInterval();
+        const slider = document.querySelector('.slider');
+
+        // Clone rooms to create infinite loop
+        const firstImg = slider.firstElementChild.cloneNode(true);
+        const lastImg = slider.lastElementChild.cloneNode(true);
+        slider.appendChild(firstImg);
+        slider.insertBefore(lastImg, slider.firstElementChild);
+
+        // Set initial position
+        let position = -slider.firstElementChild.offsetWidth;
+
+        // Update position on window resize
+        window.addEventListener('resize', () => {
+            position = -slider.firstElementChild.offsetWidth;
+            slider.style.transform = `translateX(${position}px)`;
         });
-      });
 
-      const slider = document.querySelector('.slider');
-
-      // Clone rooms to create infinite loop
-      const firstImg = slider.firstElementChild.cloneNode(true);
-      const lastImg = slider.lastElementChild.cloneNode(true);
-      slider.appendChild(firstImg);
-      slider.insertBefore(lastImg, slider.firstElementChild);
-
-      // Set initial position
-      let position = -slider.firstElementChild.offsetWidth;
-
-      // Update position on window resize
-      window.addEventListener('resize', () => {
-        position = -slider.firstElementChild.offsetWidth;
-        slider.style.transform = `translateX(${position}px)`;
-      });
-
-      // Animate slider
-      function animateSlider() {
-        position -= slider.firstElementChild.offsetWidth;
-        slider.style.transform = `translateX(${position}px)`;
-        if (position <= -slider.offsetWidth + slider.firstElementChild.offsetWidth) {
-          position = -slider.firstElementChild.offsetWidth;
+        // Animate slider
+        function animateSlider() {
+            position -= slider.firstElementChild.offsetWidth;
+            slider.style.transform = `translateX(${position}px)`;
+            if (position <= -slider.offsetWidth + slider.firstElementChild.offsetWidth) {
+                position = -slider.firstElementChild.offsetWidth;
+            }
+            requestAnimationFrame(animateSlider);
         }
-        requestAnimationFrame(animateSlider);
-      }
 
-      // Start animation
-      animateSlider();
+        // Start animation
+        animateSlider();
 
     </script>
-  </body>
+</body>
 </html>
