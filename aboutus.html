@@ -1,138 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>About Us</title>
-	<style type="text/css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+	<title>Hotel Program Database</title>
+	<style>
 		body {
-			font-family: Arial, sans-serif;
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
+			font-family: 'Segoe UI', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f5f5f5;
 		}
-		
+
+		header {
+			background-color: #1c2331;
+			color: #fff;
+			padding: 2% 5%;
+		}
+
 		h1 {
+			margin: 0;
+			font-size: 3vw;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.2vw;
 			text-align: center;
-			font-size: 2em;
-			margin: 20px 0;
-			color: #333;
-			text-transform: uppercase;
-			letter-spacing: 2px;
 		}
-		
+
+		nav ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		nav ul li {
+			margin-right: 3%;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 1.3vw;
+			font-weight: 600;
+			text-transform: uppercase;
+			transition: all 0.2s ease-in-out;
+			padding: 1.2% 2%;
+			border-radius: 5px;
+			width: 120%;
+			background-color: #3c4c62;
+		}
+
+		nav ul li a:hover {
+			background-color: #fff;
+			color: #000;
+		}
+
+		main {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 2% 5%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
 		h2 {
-			font-size: 1.5em;
-			margin: 40px 0 20px 0;
-			color: #333;
+			font-size: 2.3vw;
+			font-weight: 600;
+			margin-bottom: 2%;
+			color: #3c4c62;
+			text-align: center;
 			text-transform: uppercase;
-			letter-spacing: 1px;
+			letter-spacing: 0.2vw;
 		}
-		
-		h3 {
-			font-size: 1.2em;
-			margin: 10px 0;
-			color: #555;
-		}
-		
+
 		p {
+			font-size: 1.5vw;
+			margin-bottom: 2%;
+			line-height: 1.5;
+			color: #666;
+			text-align: center;
+		}
+
+		ul li a {
+			color: #3c4c62;
+			text-decoration: none;
+			font-size: 1.5vw;
+			font-weight: 200;
+			text-transform: uppercase;
+			transition: all 0.2s ease-in-out;
+			padding: 1.2% 2%;
+			border-radius: 5px;
+			background-color: #fff;
+			display: block;
+			margin-bottom: 2%;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			width: 60%;
+			text-align: center;
+		}
+
+		ul li a:hover {
+				background-color: #3c4c62;
+				color: #fff;
+		}
+
+		footer {
+			background-color: #1c2331;
+			color: #fff;
+			padding: 2% 5%;
+			text-align: center;
+			margin-top: 4%;
+		}
+
+		footer p {
+			margin: 0;
+			font-size: 1.2vw;
+			line-height: 1.5;
+			color: #fff;
+		}
+
+		div {
+			width: 1000px;
+            margin-right: 2px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+        #paragrafet {
 			font-size: 1em;
 			line-height: 1.5;
-			margin: 10px 0;
+			
 			color: #555;
 		}
-		
-		ul {
+        .posht {
 			list-style: none;
-			padding: 0;
 			display: flex;
-			justify-content: space-between;
+			margin-left: 25%;
 		}
-		
-		li {
-			width: 30%;
-			padding: 20px;
-			box-sizing: border-box;
+		.posht2 {
+			list-style: none;
+			display: flex;
+			width: 100%;
 			text-align: center;
-			border: 2px solid #333;
-			border-radius: 10px;
-			transition: all 0.2s ease-in-out;
 		}
-		
-		li:hover {
+        .Personat {
+            margin-top: 50px;
+            margin-right: 14px;
+            width: 12%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            border: 2px solid #333;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+        }
+        .Personat2 {
+            margin-top: 50px;
+            margin-right: 20px;
+            width: 12%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            border: 2px solid #333;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+        }
+        .Personat:hover {
 			transform: scale(1.1);
 			box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 		}
-		
-		li img {
+		#fundi {
+			width: 100%;
+			height: auto;
+			text-align: center;
+			align-content: center;
+			margin-left: 22%;
+		}
+		.Personat img {
 			width: 120px;
 			height: 120px;
 			border-radius: 50%;
 			margin-bottom: 10px;
 		}
-
-		.Personat {
-			margin-top: 50px;
-			margin-right: 12px;
-		}
-		.about{
-
-			margin-right: 12px;
-		}
-		.bot{
-			margin-left: 55px;
-		}
-		
-		/* Add your own styles here */
 	</style>
 </head>
 <body>
-	<h1>About Us</h1>
-	<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	
+	<header>
+		<h1>Hotel Program Database</h1>
+		<nav>
+			<ul class="nalt">
+				<li><a href="#">Home</a></li>
+				<li><a href="rooms.html">Rooms</a></li>
+				<li><a href="#">Bookings</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</nav>
+    <div>
+	</header>
+	<h1 id="">About Us</h1>
+
 	<h2>Our Team</h2>
 	<p>Meet the developers:</p>
-	<ul>
+	<ul class="posht">
 		<li class="Personat">
 			<img src="" alt="">
 			<h3>Bleon Murtezaj</h3>
-			<p>19 years old</p>
+			<p id="paragrafet">19 years old</p>
 		</li>
 		<li class="Personat">
 			<img src="">
 			<h3>Edon Xani</h3>
-			<p>19 years old</p>
+			<p id="paragrafet">19 years old</p>
 		</li>
 		<li class="Personat">
 			<img src="" alt="">
 			<h3>Blendi Oruci</h3>
-			<p>20 years old</p>
+			<p id="paragrafet">20 years old</p>
 		</li>
 		<li class="Personat">
 			<img src="">
 			<h3>Jon Basha</h3>
-			<p>19 years old</p>
+			<p id="paragrafet">19 years old</p>
 		</li>
 		<li class="Personat">
 			<img src="">
 			<h3>Endrit Saraqini</h3>
-			<p>19 years old</p>
+			<p id="paragrafet">19 years old</p>
 		</li>
 		<!-- Add more team member bios here -->
 	</ul>
-	
+
 	<h2>Our WebPage</h2>
 	<p>This page is about:</p>
-	<ul class="bot">
-		<li class="about">Hotel Rooms</li>
-		<li class="about">Booking</li>
-		<li class="about">Prices</li>
-		<li class="about">And More...</li>
-		<!-- Add more values here -->
-	</ul>
+	<div id="fundi">
+		<ul class="posht2">
+			<li class="Personat2">Hotel Rooms</li>
+			<li class="Personat2">Booking</li>
+			<li class="Personat2">Prices</li>
+			<li class="Personat2">And More...</li>
+			<!-- Add more values here -->
+		</ul>
+	</div>
+	
+</div>
+	<footer>
+		<p>&copy; 2023 Hotel Program Database. All rights reserved.</p>
+	</footer>
 </body>
 </html>
-
