@@ -33,7 +33,7 @@
         padding: 20px;
       }
       h2 {
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin-bottom: 10px;
       }
       
@@ -48,13 +48,13 @@
         height: 200px;
         object-fit: cover;
         margin: 10px;
-        border: 5px solid #fff;
-        border-radius: 5px;
+        border: 2px solid #fff;
+        border-radius: 2px;
         transition: all 0.3s ease-in-out;
       }
       
       .gallery img:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         border-color: #ccc;
       }
       footer {
@@ -62,13 +62,13 @@
         color: #fff;
         padding: 20px;
         text-align: center;
-        margin-top: 40px;
+        margin-top: 10px;
       }
 
       footer p {
         margin: 0;
-        font-size: 14px;
-        line-height: 1.5;
+        font-size: 11px;
+        line-height: 1.2;
         color: #fff;
       }
       
@@ -76,6 +76,27 @@
         .gallery img {
           width: 100%;
           height: auto;
+        }
+      }
+      .gallery {
+        overflow: hidden;
+      }
+      .slider {
+        display: flex;
+        width: 900px;
+        margin-left: 100px;
+        margin-right: 100px;
+        animation: slide 20s linear infinite;
+      }
+      .slider img {
+        min-width: 20vw;
+      }
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
         }
       }
     </style>
@@ -89,39 +110,53 @@
       <section class="gallery">
         <h2>Rooms for 2 Persons</h2>
         <div class="gallery">
-          <img src="room1.jpg" alt="Room 1">
-          <img src="room2.jpg" alt="Room 2">
-          <img src="room3.jpg" alt="Room 3">
-          <img src="room2.jpg" alt="Room 4" style="display: none;">
-          <img src="room3.jpg" alt="Room 5" style="display: none;">
-        </div>
+            <div class="slider">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+              <img src="room3.jpg" alt="room 3">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+            </div>
+          </div>
       </section>
       
       <section class="gallery">
         <h2>Rooms for 3+ Persons</h2>
         <div class="gallery">
-          <img src="room3.jpg" alt="Room 4">
-          <img src="room1.jpg" alt="Room 5">
-          <img src="room2.jpg" alt="Room 6">
-        </div>
+            <div class="slider">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+              <img src="room3.jpg" alt="room 3">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+            </div>
+          </div>
       </section>
       
       <center><h2>Suites</h2></center>
       <section class="gallery">
         <div class="gallery">
-          <img src="room2.jpg" alt="Suite 1">
-          <img src="room3.jpg" alt="Suite 2">
-          <img src="room1.jpg" alt="Suite 3">
-        </div>
+            <div class="slider">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+              <img src="room3.jpg" alt="room 3">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+            </div>
+          </div>
       </section>
 
       <center><h2>More Rooms</h2></center>
       <section class="gallery">
         <div class="gallery">
-          <img src="room2.jpg" alt="Room 7">
-          <img src="room1.jpg" alt="Room 8">
-          <img src="room3.jpg" alt="Room 9">
-        </div>
+            <div class="slider">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+              <img src="room3.jpg" alt="room 3">
+              <img src="room1.jpg" alt="room 1">
+              <img src="room2.jpg" alt="room 2">
+            </div>
+          </div>
       </section>
     </main>
     <footer>
@@ -131,22 +166,22 @@
       const gallery = document.querySelectorAll('.gallery');
 
       gallery.forEach(gallery => {
-        const images = gallery.querySelectorAll('img');
+        const rooms = gallery.querySelectorAll('img');
         let currentIdx = 0;
         let interval;
 
         const startInterval = () => {
           interval = setInterval(() => {
-            images[currentIdx].classList.remove('active');
+            rooms[currentIdx].classList.remove('active');
             currentIdx++;
-            if (currentIdx >= images.length) {
+            if (currentIdx >= rooms.length) {
               currentIdx = 0;
             }
-            images[currentIdx].classList.add('active');
-          }, 1500);
+            rooms[currentIdx].classList.add('active');
+          }, 1200);
         }
 
-        images[currentIdx].classList.add('active');
+        rooms[currentIdx].classList.add('active');
         startInterval();
 
         gallery.addEventListener('mouseover', () => {
@@ -158,7 +193,36 @@
         });
       });
 
+      const slider = document.querySelector('.slider');
+
+      // Clone rooms to create infinite loop
+      const firstImg = slider.firstElementChild.cloneNode(true);
+      const lastImg = slider.lastElementChild.cloneNode(true);
+      slider.appendChild(firstImg);
+      slider.insertBefore(lastImg, slider.firstElementChild);
+
+      // Set initial position
+      let position = -slider.firstElementChild.offsetWidth;
+
+      // Update position on window resize
+      window.addEventListener('resize', () => {
+        position = -slider.firstElementChild.offsetWidth;
+        slider.style.transform = `translateX(${position}px)`;
+      });
+
+      // Animate slider
+      function animateSlider() {
+        position -= slider.firstElementChild.offsetWidth;
+        slider.style.transform = `translateX(${position}px)`;
+        if (position <= -slider.offsetWidth + slider.firstElementChild.offsetWidth) {
+          position = -slider.firstElementChild.offsetWidth;
+        }
+        requestAnimationFrame(animateSlider);
+      }
+
+      // Start animation
+      animateSlider();
+
     </script>
   </body>
 </html>
-
